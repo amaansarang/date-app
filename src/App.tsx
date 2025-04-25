@@ -27,13 +27,3 @@ const App = () => (
 );
 
 export default App;
-
-// Added a basic Admin page component.  Replace this with your actual implementation.
-const Admin = () => {
-  return (
-    <div>
-      <h1>Admin Page</h1>
-      <p>This is a placeholder for user input data.</p>
-    </div>
-  );
-};
