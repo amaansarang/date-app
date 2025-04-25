@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,19 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				date: {
+					purple: '#8B5CF6',
+					pink: '#D946EF',
+					orange: '#F97316',
+					blue: '#0EA5E9',
+					softPurple: '#E5DEFF',
+					softPink: '#FFDEE2',
+					softPeach: '#FDE1D3',
+					softBlue: '#D3E4FD',
+					softGray: '#F1F0FB',
+					neutral: '#8E9196',
+					dark: '#1A1F2C'
 				}
 			},
 			borderRadius: {
@@ -84,11 +98,31 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'pulse-soft': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' }
+				},
+				'card-rotate': {
+					'0%': { transform: 'rotate(-5deg)' },
+					'50%': { transform: 'rotate(5deg)' },
+					'100%': { transform: 'rotate(-5deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-soft': 'pulse-soft 4s ease-in-out infinite',
+				'card-rotate': 'card-rotate 12s ease-in-out infinite'
+			},
+			fontFamily: {
+				'poppins': ['Poppins', 'sans-serif'],
+				'playfair': ['Playfair Display', 'serif']
 			}
 		}
 	},
