@@ -17,6 +17,7 @@ const Index = () => {
   const [chosenDate, setChosenDate] = useState<DateType | null>(null);
   const [filter, setFilter] = useState<string | null>(null);
   const [userName, setUserName] = useState<string>("");
+  const [secretMessage, setSecretMessage] = useState<string>("");
   const [isConfirmed, setIsConfirmed] = useState(false);
   const handleDateClick = (date: DateType) => {
     setSelectedDate(date);
@@ -75,7 +76,13 @@ const Index = () => {
                   value={userName}
                   onChange={(e) => setUserName(e.target.value)}
                   placeholder="Enter your name"
-                  className="w-full mb-4 p-2 rounded-md bg-slate-700 text-white border border-slate-600 focus:outline-none focus:border-blue-500"
+                  className="w-full mb-2 p-2 rounded-md bg-slate-700 text-white border border-slate-600 focus:outline-none focus:border-blue-500"
+                />
+                <textarea
+                  placeholder="Secret message (optional)"
+                  className="w-full mb-4 p-2 rounded-md bg-slate-700 text-white border border-slate-600 focus:outline-none focus:border-blue-500 resize-none h-20"
+                  onChange={(e) => setSecretMessage(e.target.value)}
+                  value={secretMessage}
                 />
                 {!isConfirmed ? (
                   <Button 
@@ -84,7 +91,8 @@ const Index = () => {
                         const { error } = await dateService.confirmDate(
                           userName,
                           chosenDate.title,
-                          chosenDate.id
+                          chosenDate.id,
+                          secretMessage
                         );
 
                         if (error) throw error;
