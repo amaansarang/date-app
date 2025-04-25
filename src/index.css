@@ -81,12 +81,17 @@
     @apply relative overflow-hidden rounded-lg border bg-slate-800 text-white shadow-lg transition-all hover:shadow-xl;
   }
   
-  .date-card:hover .date-card-overlay {
-    @apply opacity-100;
+  .date-card::before {
+    content: '';
+    @apply absolute inset-0 bg-black opacity-0 transition-opacity;
+  }
+  
+  .date-card:hover::before {
+    @apply opacity-30;
   }
   
   .date-card-overlay {
-    @apply absolute inset-0 bg-gradient-to-t from-slate-900/95 to-transparent opacity-0 transition-opacity flex flex-col justify-end p-5 text-white;
+    @apply absolute inset-0 bg-gradient-to-t from-slate-900/95 to-transparent flex flex-col justify-end p-5 text-white;
   }
   
   .date-card-shine {
