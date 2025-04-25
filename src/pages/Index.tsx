@@ -38,9 +38,7 @@ const Index = () => {
           <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4">
             Choose Your <span className="gradient-text font-extrabold">Date</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Explore unique date experiences tailored just for you. Each card holds a new adventure waiting to happen.
-          </p>
+          <p className="text-lg text-muted-foreground">Explore unique date experiences. Each card holds a new adventure waiting to happen.</p>
         </div>
         
         <div className="flex justify-center mb-8">
