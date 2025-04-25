@@ -383,7 +383,7 @@ export const dateOptions: DateType[] = [
   {
     id: "taylor-tribute",
     title: "Taylor Swift Tribute Date",
-    description: "Celebrate Taylor Swift's music with a dedicated listening and sing-along session.",
+    description: "Love's A Game, Wanna Play?",
     imageSrc: "https://imgur.com/b7yYBkR.jpg",
     activities: [
       "Create a playlist of favorite Taylor Swift songs",

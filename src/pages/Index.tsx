@@ -44,7 +44,7 @@ const Index = () => {
           <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4">
             Choose Your <span className="gradient-text font-extrabold">Date With Me</span>
           </h2>
-          <p className="text-lg text-muted-foreground">Hey Girl, I think I might like you. Each card holds a new adventure so lets get going BABYYYY.  Tap on the cards for more info</p>
+          <p className="text-lg text-muted-foreground">Hey Babygirl, Welcome to my App. Each card holds a new adventure so lets get going BABYYYY.  Tap on the cards for more info.</p>
         </div>
 
         <div className="flex justify-center mb-8">
