@@ -119,8 +119,6 @@ const Index = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           {filteredDates.map(date => <DateCard key={date.id} title={date.title} description={date.description} imageSrc={date.imageSrc} onClick={() => handleDateClick(date)} className={chosenDate?.id === date.id ? "ring-2 ring-date-purple" : ""} />)}
         </div>
-
-        <ConfirmedDates />
       </main>
 
       <Footer />
