@@ -78,7 +78,7 @@
   }
 
   .date-card {
-    @apply relative overflow-hidden rounded-lg border bg-slate-800 text-white shadow-lg transition-all hover:shadow-xl;
+    @apply relative overflow-hidden rounded-lg border bg-slate-700/80 text-white shadow-lg transition-all hover:shadow-xl;
   }
   
   .date-card::before {
