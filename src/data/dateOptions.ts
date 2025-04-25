@@ -1,62 +1,18 @@
 import { DateType } from '@/types/date';
 
 export const dateOptions: DateType[] = [
+  
   {
-    id: "boba-date",
-    title: "Boba Date",
-    description: "Enjoy a cozy time sipping on your favorite boba tea flavors together.",
-    imageSrc: "https://imgur.com/iD0Ffu6.jpg",
-    activities: [
-      "Try different boba flavors together",
-      "Experiment with toppings like jelly or pudding",
-      "Create your custom boba drinks",
-      "Take cute photos with your drinks"
-    ],
-    mood: "Fun, chill, and flavorful",
-    category: "indoor"
-  },
-  {
-    id: "carnight",
-    title: "Night Drive",
-    description: "Cruise under city lights with good music and even better company.",
-    imageSrc: "https://imgur.com/7IuaEro.jpg",
-    activities: [
-      "Pick a playlist you both vibe with",
-        "Drive through scenic or quiet roads",
-        "Stop for street food or a chai break",
-        "Park somewhere peaceful and talk"
-    ],
-    mood: "Exciting, adventurous, and playful",
+    id: "midnight-memories",
+    title: "Midnight Memories",
+    description: "Roam the streets, laugh, talk, and make core memories past midnight.",
+    imageSrc: "https://imgur.com/UiqSxm1.jpg",
+    activities: ["Go for a long drive", "Eat midnight snacks", "Dance at a random spot", "Watch the city lights in silence"],
+    mood: "Spontaneous, romantic, youthful",
     category: "outdoor"
   },
-  {
-    id: "cartoon-date",
-    title: "Cartoon Date",
-    description: "Revisit childhood favorites and laugh together over classic cartoons.",
-    imageSrc: "https://imgur.com/YJ2Dq4h.jpg",
-    activities: [
-      "Compile a list of favorite cartoons",
-      "Prepare themed snacks",
-      "Dress up as beloved characters",
-      "Draw or color cartoon scenes together"
-    ],
-    mood: "Nostalgic, cheerful, and light-hearted",
-    category: "indoor"
-  },
-  {
-    id: "clubbing-date",
-    title: "Clubbing Date",
-    description: "Dance the night away at your favorite club or lounge.",
-    imageSrc: "https://imgur.com/YL8vSuG.jpg",
-    activities: [
-      "Hit the dance floor together",
-      "Order signature drinks and enjoy the atmosphere",
-      "Show off your best dance moves",
-      "Take fun pictures to remember the night"
-    ],
-    mood: "Energetic, social, and lively",
-    category: "outdoor"
-  },
+  
+  
   {
     id: "dinner-date",
     title: "Dinner Date",
@@ -71,20 +27,7 @@ export const dateOptions: DateType[] = [
     mood: "Romantic, intimate, and sophisticated",
     category: "outdoor"
   },
-  {
-    id: "stargazing-date",
-    title: "Stargazing Date",
-    description: "Head to a quiet spot under the night sky and enjoy the stars together.",
-    imageSrc: "https://imgur.com/Mcb5Wj7.jpg", // Replace with a suitable image link
-    activities: [
-      "Find a secluded spot with minimal light pollution",
-      "Bring a telescope or binoculars for better viewing",
-      "Look up constellations and learn about the stars",
-      "Share thoughts while enjoying the night sky"
-    ],
-    mood: "Romantic, peaceful, and awe-inspiring",
-    category: "outdoor"
-  },
+  
   {
     id: "drinks-at-my-place",
     title: "Drinks at My Place",
@@ -97,6 +40,20 @@ export const dateOptions: DateType[] = [
       "Toast to shared memories"
     ],
     mood: "Intimate, relaxed, and fun",
+    category: "indoor"
+  },
+  {
+    id: "boba-date",
+    title: "Boba Tea Date",
+    description: "Enjoy a cozy time sipping on your favorite boba tea flavors together.",
+    imageSrc: "https://imgur.com/iD0Ffu6.jpg",
+    activities: [
+      "Try different boba flavors together",
+      "Experiment with toppings like jelly or pudding",
+      "Create your custom boba drinks",
+      "Take cute photos with your drinks"
+    ],
+    mood: "Fun, chill, and flavorful",
     category: "indoor"
   },
   {
@@ -142,6 +99,20 @@ export const dateOptions: DateType[] = [
     category: "indoor"
   },
   {
+    id: "carnight",
+    title: "Night Drive",
+    description: "Cruise under city lights with good music and even better company.",
+    imageSrc: "https://imgur.com/7IuaEro.jpg",
+    activities: [
+      "Pick a playlist you both vibe with",
+        "Drive through scenic or quiet roads",
+        "Stop for street food or a chai break",
+        "Park somewhere peaceful and talk"
+    ],
+    mood: "Exciting, adventurous, and playful",
+    category: "outdoor"
+  },
+  {
     id: "ice-cream-date",
     title: "Ice Cream Date",
     description: "Indulge in a sweet ice cream date with a variety of flavors.",
@@ -165,6 +136,20 @@ export const dateOptions: DateType[] = [
     category: "creative"
   },
   {
+    id: "stargazing-date",
+    title: "Stargazing Date",
+    description: "Head to a quiet spot under the night sky and enjoy the stars together.",
+    imageSrc: "https://imgur.com/Mcb5Wj7.jpg", // Replace with a suitable image link
+    activities: [
+      "Find a secluded spot with minimal light pollution",
+      "Bring a telescope or binoculars for better viewing",
+      "Look up constellations and learn about the stars",
+      "Share thoughts while enjoying the night sky"
+    ],
+    mood: "Romantic, peaceful, and awe-inspiring",
+    category: "outdoor"
+  },
+  {
     id: "coffee-date",
     title: "Coffee Date",
     description: "Cozy up at a café or brew together at home.",
@@ -173,12 +158,16 @@ export const dateOptions: DateType[] = [
     mood: "Cozy, conversational, relaxed",
     category: "indoor"
   },
+ 
   {
     id: "boka-date",
-    title: "Boka Date",
-    description: "Play emotional Boka music and vibe in silence or soft talks.",
+    title: "Cat Date",
+    description: "Play with cats",
     imageSrc: "https://imgur.com/iiELVSI.jpg",
-    activities: ["Curate a Boka playlist", "Dim the lights", "Listen and feel deeply", "Talk only if you want to"],
+    activities: ["Visit a local cat café together",
+                  "Play with the cats and feed them treats",
+                  "Take aesthetic photos with your favorites",
+                  "Chill with coffee and cat cuddles"],
     mood: "Emotional, intimate, quiet",
     category: "music"
   },
@@ -241,15 +230,7 @@ export const dateOptions: DateType[] = [
     mood: "Laid-back, flirty, private",
     category: "indoor"
   },
-  {
-    id: "midnight-memories",
-    title: "Midnight Memories",
-    description: "Roam the streets, laugh, talk, and make core memories past midnight.",
-    imageSrc: "https://imgur.com/UiqSxm1.jpg",
-    activities: ["Go for a long drive", "Eat midnight snacks", "Dance at a random spot", "Watch the city lights in silence"],
-    mood: "Spontaneous, romantic, youthful",
-    category: "outdoor"
-  },
+  
   {
     id: "my-kind-of-playlist",
     title: "My Kind of Playlist",
@@ -269,6 +250,21 @@ export const dateOptions: DateType[] = [
     category: "creative"
   },
   {
+    id: "cartoon-date",
+    title: "Cartoon Date",
+    description: "Revisit childhood favorites and laugh together over classic cartoons.",
+    imageSrc: "https://imgur.com/YJ2Dq4h.jpg",
+    activities: [
+      "Compile a list of favorite cartoons",
+      "Prepare themed snacks",
+      "Dress up as beloved characters",
+      "Draw or color cartoon scenes together"
+    ],
+    mood: "Nostalgic, cheerful, and light-hearted",
+    category: "indoor"
+  },
+  
+  {
     id: "jetlag-date",
     title: "Jetlag Date",
     description: "Relax and unwind after a long trip, indulging in comforting activities.",
@@ -282,6 +278,21 @@ export const dateOptions: DateType[] = [
     mood: "Comfortable, soothing, and relaxing",
     category: "indoor"
   },
+  {
+    id: "clubbing-date",
+    title: "Clubbing Date",
+    description: "Dance the night away at your favorite club or lounge.",
+    imageSrc: "https://imgur.com/YL8vSuG.jpg",
+    activities: [
+      "Hit the dance floor together",
+      "Order signature drinks and enjoy the atmosphere",
+      "Show off your best dance moves",
+      "Take fun pictures to remember the night"
+    ],
+    mood: "Energetic, social, and lively",
+    category: "outdoor"
+  },
+
   {
     id: "makeout-date",
     title: "Makeout Date",
@@ -420,6 +431,20 @@ export const dateOptions: DateType[] = [
       "Discuss vampire lore and history"
     ],
     mood: "Mysterious, dramatic, and thrilling",
+    category: "indoor"
+  },
+  {
+    id: "under-the-sheets-date",
+    title: "Under the Sheets Date",
+    description: "Yeah BABYYY All day, all night",
+    imageSrc: "https://imgur.com/BIdQ8gd.jpg", // Swap with another if you have a specific vibe
+    activities: [
+      "We'll go slow and high tempo",
+      "It's a paradise, It's a warzone",
+      "Switchin my positions for you",
+      "34,"
+    ],
+    mood: "Private, sensual, and deeply connected",
     category: "indoor"
   },
   {
