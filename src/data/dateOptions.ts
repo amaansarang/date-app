@@ -4,195 +4,209 @@ export const dateOptions: DateType[] = [
   {
     id: "lego-date",
     title: "Lego Date",
-    description: "Build intricate Lego creations together, fostering creativity and teamwork.",
-    imageSrc: "/fllego.jpg",
+    description: "Build memories together brick by brick with a fun LEGO building session.",
+    imageSrc: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=1470&auto=format&fit=crop",
     activities: [
-      "Select a Lego set to build together",
-      "Challenge each other with custom designs",
-      "Create a themed Lego world",
-      "Display your masterpiece proudly"
+      "Choose a LEGO set to build together",
+      "Create a mini competition for most creative build",
+      "Take photos of your creations",
+      "Design your dream home with LEGO bricks"
     ],
-    mood: "Playful, creative, and collaborative",
+    mood: "Playful, nostalgic, and creative",
     category: "indoor"
   },
   {
     id: "drinks-at-my-place",
     title: "Drinks at My Place",
-    description: "Enjoy a cozy evening with homemade cocktails and heartfelt conversations.",
-    imageSrc: "/drinksatmyplace.jpg",
+    description: "Enjoy a cozy evening with handcrafted cocktails and good conversation.",
+    imageSrc: "https://images.unsplash.com/photo-1470338745628-171cf53de3a8?q=80&w=1548&auto=format&fit=crop",
     activities: [
       "Mix signature cocktails together",
-      "Create a personalized drink menu",
-      "Set up a mini bar at home",
-      "Toast to shared memories"
+      "Play your favorite music in the background",
+      "Share stories and get to know each other better",
+      "Play a round of two truths and a lie"
     ],
-    mood: "Intimate, relaxed, and fun",
+    mood: "Intimate, relaxed, and slightly sophisticated",
     category: "indoor"
   },
   {
-    id: "smoke-date",
-    title: "Smoke Date",
-    description: "Share a tranquil moment together, enjoying the ambiance and each other's company.",
-    imageSrc: "/balconysmoke.jpg",
-    activities: [
-      "Set up a comfortable outdoor seating area",
-      "Enjoy a smoke together under the stars",
-      "Play soft background music",
-      "Engage in deep conversations"
-    ],
-    mood: "Calm, introspective, and bonding",
-    category: "outdoor"
-  },
-  {
     id: "netflix-and-chill",
-    title: "Netflix and Chill",
-    description: "Relax with your favorite shows and movies in a cozy setting.",
-    imageSrc: "/nnc.jpg",
+    title: "Netflix & Chill Date",
+    description: "Snuggle up for a movie marathon with snacks and comfort.",
+    imageSrc: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?q=80&w=1470&auto=format&fit=crop",
     activities: [
-      "Create a watchlist of favorite titles",
-      "Prepare snacks and drinks",
-      "Set up a comfortable viewing area",
-      "Cuddle up and enjoy the show"
+      "Choose movies from different genres",
+      "Prepare a blanket fort for maximum coziness",
+      "Make your favorite movie snacks",
+      "Create a movie critique game"
     ],
-    mood: "Comfortable, entertaining, and laid-back",
+    mood: "Cozy, casual, and intimate",
     category: "indoor"
   },
   {
     id: "cartoon-date",
     title: "Cartoon Date",
-    description: "Revisit childhood favorites and laugh together over classic cartoons.",
-    imageSrc: "/cartoondate.jpg",
+    description: "Revisit childhood with a marathon of your favorite cartoons.",
+    imageSrc: "https://images.unsplash.com/photo-1604889863597-d274578cf93c?q=80&w=1587&auto=format&fit=crop",
     activities: [
-      "Compile a list of favorite cartoons",
-      "Prepare themed snacks",
-      "Dress up as beloved characters",
-      "Draw or color cartoon scenes together"
+      "Compile a list of nostalgic cartoons",
+      "Make cereal or childhood snacks",
+      "Draw your partner as a cartoon character",
+      "Create voice impressions of characters"
     ],
-    mood: "Nostalgic, cheerful, and light-hearted",
+    mood: "Nostalgic, light-hearted, and fun",
     category: "indoor"
   },
   {
     id: "dress-up-date",
     title: "Dress Up Date",
-    description: "Embrace creativity by dressing up in themed outfits and role-playing.",
-    imageSrc: "/download10.jpg",
+    description: "Transform into different characters for a night of role-play and fun.",
+    imageSrc: "https://images.unsplash.com/photo-1603561596772-e5b9613e3b59?q=80&w=1536&auto=format&fit=crop",
     activities: [
-      "Choose a fun theme or era",
-      "Assemble costumes together",
-      "Act out scenes or create a photoshoot",
-      "Share stories inspired by your outfits"
+      "Choose a theme together",
+      "Create outfits from clothes you have",
+      "Stay in character for dinner",
+      "Photograph your transformations"
     ],
-    mood: "Imaginative, playful, and expressive",
+    mood: "Playful, imaginative, and adventurous",
     category: "indoor"
   },
   {
-    id: "taylor-tribute",
-    title: "Taylor Swift Tribute Date",
-    description: "Celebrate Taylor Swift's music with a dedicated listening and sing-along session.",
-    imageSrc: "/taylortribute.jpg",
+    id: "artist-tribute",
+    title: "Artist Tribute Date",
+    description: "Celebrate your favorite musician with a themed evening of their work.",
+    imageSrc: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1470&auto=format&fit=crop",
     activities: [
-      "Create a playlist of favorite Taylor Swift songs",
-      "Sing along or have a karaoke session",
-      "Discuss lyrics and their meanings",
-      "Dress up in Swift-inspired outfits"
+      "Create a playlist of their best songs",
+      "Learn about their life and influences",
+      "Try to recreate iconic photos or album covers",
+      "Make cocktails inspired by their songs"
     ],
-    mood: "Musical, expressive, and fan-centric",
+    mood: "Appreciative, passionate, and connected",
     category: "indoor"
   },
   {
-    id: "zayn-tribute",
-    title: "Zayn Malik Tribute Date",
-    description: "Immerse yourselves in Zayn Malik's music and artistic journey.",
-    imageSrc: "/zaynmaliknight.jpg",
-    activities: [
-      "Listen to Zayn's discography",
-      "Watch music videos and interviews",
-      "Analyze song lyrics together",
-      "Create fan art or themed crafts"
-    ],
-    mood: "Artistic, soulful, and engaging",
-    category: "indoor"
-  },
-  {
-    id: "album-tribute",
-    title: "Album Tribute Date",
-    description: "Dedicate an evening to exploring a favorite album in depth.",
-    imageSrc: "/taylorswiftreputation.jpg",
-    activities: [
-      "Listen to the album from start to finish",
-      "Discuss the themes and lyrics",
-      "Create art inspired by the music",
-      "Share personal connections to the songs"
-    ],
-    mood: "Reflective, immersive, and connected",
-    category: "indoor"
-  },
-  {
-    id: "cozy-coffee-evening",
+    id: "cozy-coffee",
     title: "Cozy Coffee Evening",
-    description: "Savor warm beverages together in a comfortable setting.",
-    imageSrc: "/bookreading.jpg",
+    description: "Explore coffee flavors and deep conversations in a relaxed setting.",
+    imageSrc: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1374&auto=format&fit=crop",
     activities: [
-      "Brew favorite coffee or tea blends",
-      "Set up a cozy nook with blankets",
-      "Read books or share stories",
-      "Listen to soft music together"
+      "Try different coffee brewing methods",
+      "Pair coffee with desserts or pastries",
+      "Play conversation starter games",
+      "Read poetry or short stories aloud"
     ],
-    mood: "Warm, intimate, and soothing",
+    mood: "Intimate, thoughtful, and warm",
     category: "indoor"
   },
   {
-    id: "video-games-date",
+    id: "video-games",
     title: "Video Games Date",
-    description: "Engage in friendly competition or cooperative gameplay.",
-    imageSrc: "/technolgy.jpg",
+    description: "Compete and cooperate through digital adventures together.",
+    imageSrc: "https://images.unsplash.com/photo-1580327344181-c1163234e5a0?q=80&w=1467&auto=format&fit=crop",
     activities: [
-      "Choose multiplayer games to play together",
-      "Set challenges or goals",
-      "Create a gaming leaderboard",
-      "Celebrate victories with treats"
+      "Choose co-op games to play together",
+      "Have a friendly competition with prizes",
+      "Try a game neither of you have played",
+      "Create gaming snacks and themed drinks"
     ],
-    mood: "Exciting, competitive, and fun",
+    mood: "Competitive, exciting, and engaging",
     category: "indoor"
   },
   {
-    id: "makeout-date",
-    title: "Makeout Date",
-    description: "Spend quality time focusing on physical intimacy and connection.",
-    imageSrc: "/makeoutdate.jpg",
-    activities: [
-      "Set a romantic ambiance with lighting and music",
-      "Share affectionate moments",
-      "Express feelings and desires",
-      "Ensure mutual comfort and consent"
-    ],
-    mood: "Passionate, intimate, and loving",
-    category: "indoor"
-  },
-  {
-    id: "skincare-date",
+    id: "skincare",
     title: "Skincare Date",
-    description: "Pamper each other with a shared skincare routine.",
-    imageSrc: "/painting.jpg",
+    description: "Pamper yourselves with a relaxing skincare routine together.",
+    imageSrc: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1470&auto=format&fit=crop",
     activities: [
-      "Apply face masks together",
+      "Do face masks together",
       "Give each other facial massages",
       "Try new skincare products",
       "Take before and after selfies"
     ],
-    mood: "Relaxing, caring, and rejuvenating",
+    mood: "Relaxing, intimate, and caring",
     category: "indoor"
   },
   {
-    id: "cooking-date",
-    title: "Cooking Date",
-    description: "Collaborate in the kitchen to create a delicious meal.",
-    imageSrc: "/foodmall.jpg",
+    id: "f1-home",
+    title: "F1 at Home",
+    description: "Experience the thrill of Formula 1 from your couch.",
+    imageSrc: "https://images.unsplash.com/photo-1504707748692-419802cf939d?q=80&w=1470&auto=format&fit=crop",
     activities: [
-      "Select a recipe to cook together",
+      "Watch an F1 race together",
+      "Make race-themed snacks",
+      "Play F1 video games",
+      "Learn about different teams and drivers"
+    ],
+    mood: "Exciting, passionate, and entertaining",
+    category: "indoor"
+  },
+  {
+    id: "late-night-music",
+    title: "Late Night Music Drive",
+    description: "Cruise through empty streets with the perfect soundtrack.",
+    imageSrc: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?q=80&w=1471&auto=format&fit=crop",
+    activities: [
+      "Create the perfect playlist together",
+      "Find scenic routes with city lights",
+      "Stop at a quiet spot to talk",
+      "Enjoy midnight snacks"
+    ],
+    mood: "Atmospheric, romantic, and adventurous",
+    category: "outdoor"
+  },
+  {
+    id: "arcade",
+    title: "Arcade Date",
+    description: "Relive the retro gaming experience together.",
+    imageSrc: "https://images.unsplash.com/photo-1511882150382-421056c89033?q=80&w=1471&auto=format&fit=crop",
+    activities: [
+      "Play classic arcade games",
+      "Compete for high scores",
+      "Share gaming memories",
+      "Win prizes together"
+    ],
+    mood: "Playful, nostalgic, and competitive",
+    category: "indoor"
+  },
+  {
+    id: "polaroids",
+    title: "Polaroid Date",
+    description: "Capture instant memories around the city.",
+    imageSrc: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1464&auto=format&fit=crop",
+    activities: [
+      "Take polaroid photos at different locations",
+      "Create a mini photo album",
+      "Write captions for each photo",
+      "Find interesting backgrounds and poses"
+    ],
+    mood: "Creative, spontaneous, and memorable",
+    category: "outdoor"
+  },
+  {
+    id: "morning-walk",
+    title: "Morning Walk Date",
+    description: "Start the day with fresh air and quality time.",
+    imageSrc: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=1470&auto=format&fit=crop",
+    activities: [
+      "Choose a scenic route or park",
+      "Bring coffee or tea in travel mugs",
+      "Take photos of interesting things",
+      "Stop for breakfast afterward"
+    ],
+    mood: "Refreshing, peaceful, and energizing",
+    category: "outdoor"
+  },
+  {
+    id: "cooking",
+    title: "Cooking Date",
+    description: "Create a delicious meal together from scratch.",
+    imageSrc: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1470&auto=format&fit=crop",
+    activities: [
+      "Choose a recipe together",
       "Shop for ingredients",
-      "Prepare and cook the meal",
-      "Enjoy the dish and share feedback"
+      "Cook as a team",
+      "Enjoy your creation"
     ],
     mood: "Collaborative, fun, and satisfying",
     category: "indoor"
