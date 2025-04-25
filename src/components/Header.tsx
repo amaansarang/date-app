@@ -5,7 +5,10 @@ const Header: React.FC = () => {
       <div className="container max-w-5xl flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Heart className="text-blue-500 h-6 w-6" />
-          <h1 className="font-poppins text-xl text-white font-normal">The Date App</h1>
+          <h1 className="font-poppins text-xl text-white font-normal flex items-baseline gap-2">
+            The Date App
+            <span className="text-xs text-gray-400">By Amaan</span>
+          </h1>
         </div>
       </div>
     </header>;
