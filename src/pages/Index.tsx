@@ -13,6 +13,7 @@ const Index = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [chosenDate, setChosenDate] = useState<DateType | null>(null);
   const [filter, setFilter] = useState<string | null>(null);
+  const [userName, setUserName] = useState<string>("");
   const handleDateClick = (date: DateType) => {
     setSelectedDate(date);
     setIsModalOpen(true);
@@ -55,7 +56,7 @@ const Index = () => {
           </div>
         </div>
 
-        {chosenDate && <div className="mb-10 bg-white rounded-2xl p-6 shadow-lg border border-date-softPurple animate-fade-in">
+        {chosenDate && <div className="mb-10 bg-slate-800 rounded-2xl p-6 shadow-lg border border-date-softPurple animate-fade-in">
             <div className="flex items-center gap-2 mb-4">
               <Heart className="text-date-pink h-5 w-5 fill-date-pink animate-pulse-soft" />
               <h3 className="font-playfair text-xl font-medium">Your Chosen Date</h3>
@@ -63,9 +64,19 @@ const Index = () => {
             <div className="flex flex-col md:flex-row gap-4 items-center">
               <img src={chosenDate.imageSrc} alt={chosenDate.title} className="w-full md:w-1/3 h-48 object-cover rounded-lg" />
               <div className="flex-1">
-                <h4 className="font-playfair text-xl font-bold mb-2">{chosenDate.title}</h4>
-                <p className="text-muted-foreground mb-4">{chosenDate.description}</p>
-                <Button variant="outline" onClick={() => setChosenDate(null)} className="text-sm">
+                <h4 className="font-playfair text-xl font-bold mb-2 text-white">{chosenDate.title}</h4>
+                <p className="text-slate-300 mb-4">{chosenDate.description}</p>
+                <input
+                  type="text"
+                  value={userName}
+                  onChange={(e) => setUserName(e.target.value)}
+                  placeholder="Enter your name"
+                  className="w-full mb-4 p-2 rounded-md bg-slate-700 text-white border border-slate-600 focus:outline-none focus:border-blue-500"
+                />
+                <Button variant="outline" onClick={() => {
+                  setChosenDate(null);
+                  setUserName("");
+                }} className="text-sm text-slate-300 hover:text-white">
                   Choose Another Date
                 </Button>
               </div>
