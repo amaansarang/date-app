@@ -6,65 +6,65 @@
 
 @layer base {
   :root {
-    --background: 215 25% 27%;
-    --foreground: 0 0% 98%;
+    --background: 230 35% 10%; /* Very dark navy */
+    --foreground: 0 0% 100%;   /* White for contrast */
 
-    --card: 217 33% 17%;
-    --card-foreground: 0 0% 98%;
+    --card: 230 25% 15%; /* Slightly lighter navy/black */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 217 33% 17%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 230 25% 15%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 210 100% 50%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 46 100% 50%; /* Gold */
+    --primary-foreground: 0 0% 10%; /* Deep black text */
 
-    --secondary: 215 25% 27%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 210 25% 20%; /* Muted navy */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 215 25% 27%;
-    --muted-foreground: 215 25% 70%;
+    --muted: 0 0% 30%; /* Grayish for subtle text */
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 215 25% 27%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 0 0% 80%; /* Silver */
+    --accent-foreground: 0 0% 10%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 75% 45%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 210 100% 50%;
+    --border: 0 0% 20%; /* Very dark gray border */
+    --input: 0 0% 25%;
+    --ring: 46 100% 50%; /* Gold ring */
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 260 20% 10%;
-    --foreground: 210 40% 98%;
+    --background: 230 40% 8%; /* Deeper navy/black */
+    --foreground: 0 0% 95%;
 
-    --card: 260 15% 15%;
-    --card-foreground: 210 40% 98%;
+    --card: 230 30% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 260 15% 15%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 230 30% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 267 84% 63%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 46 100% 55%; /* Bright gold */
+    --primary-foreground: 0 0% 10%;
 
-    --secondary: 330 90% 60%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 240 20% 25%; /* Deep navy/steel blue */
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 260 30% 20%;
-    --muted-foreground: 260 10% 70%;
+    --muted: 240 10% 30%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 260 30% 20%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 0 0% 75%; /* Silver */
+    --accent-foreground: 0 0% 10%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 35%;
+    --destructive-foreground: 0 0% 95%;
 
-    --border: 260 20% 20%;
-    --input: 260 20% 20%;
-    --ring: 267 84% 63%;
+    --border: 240 15% 20%;
+    --input: 240 15% 20%;
+    --ring: 46 100% 55%; /* Gold */
   }
 }
 
@@ -78,30 +78,30 @@
   }
 
   .date-card {
-    @apply relative overflow-hidden rounded-lg border bg-slate-800 text-white shadow-lg transition-all hover:shadow-xl;
+    @apply relative overflow-hidden rounded-lg border bg-[#0a0a0a] text-white shadow-lg transition-all hover:shadow-xl;
   }
-  
+
   .date-card:hover .date-card-overlay {
     @apply opacity-100;
   }
-  
+
   .date-card-overlay {
-    @apply absolute inset-0 bg-gradient-to-t from-slate-900/95 to-transparent opacity-0 transition-opacity flex flex-col justify-end p-5 text-white;
+    @apply absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 transition-opacity flex flex-col justify-end p-5 text-white;
   }
-  
+
   .date-card-shine {
-    @apply absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-transparent opacity-0 transition-opacity;
+    @apply absolute inset-0 bg-gradient-to-br from-yellow-400/10 via-transparent to-transparent opacity-0 transition-opacity;
   }
-  
+
   .date-card:hover .date-card-shine {
     @apply opacity-100;
   }
-  
+
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-yellow-400 via-white to-slate-300 bg-clip-text text-transparent;
   }
 
   .bg-gradient-custom {
-    @apply bg-gradient-to-tr from-slate-900 via-slate-800 to-slate-700;
+    @apply bg-gradient-to-tr from-black via-slate-900 to-slate-800;
   }
 }
