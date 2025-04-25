@@ -36,14 +36,15 @@ const Index = () => {
       <main className="flex-grow container max-w-5xl px-4 md:px-6 pt-8 pb-12">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4">
-            Choose Your <span className="gradient-text font-extrabold">Date</span>
+            Choose Your <span className="gradient-text font-extrabold">Date With Amaan</span>
           </h2>
-          <p className="text-lg text-muted-foreground">Explore unique date experiences. Each card holds a new adventure waiting to happen.</p>
+          <p className="text-lg text-muted-foreground">Hey Girl, I think I might like you. Each card holds a new adventure so lets get going BABYYYY. 
+Swipe on the cards to read the date type.</p>
         </div>
         
         <div className="flex justify-center mb-8">
           <div className="flex gap-2 flex-wrap justify-center">
-            <Button variant={filter === null ? "default" : "outline"} onClick={() => setFilter(null)} className="rounded-full">
+            <Button variant={filter === null ? "default" : "outline"} onClick={() => setFilter(null)} className="rounded-full font-semibold">
               All Dates
             </Button>
             <Button variant={filter === "indoor" ? "default" : "outline"} onClick={() => setFilter("indoor")} className="rounded-full">
