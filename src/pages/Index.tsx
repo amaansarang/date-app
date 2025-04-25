@@ -6,6 +6,7 @@ import DateCard from '@/components/DateCard';
 import DateModal from '@/components/DateModal';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ConfirmedDates from '@/components/ConfirmedDates';
 import { dateOptions } from '@/data/dateOptions';
 import { DateType } from '@/types/date';
 const Index = () => {
@@ -76,7 +77,27 @@ const Index = () => {
                 />
                 {!isConfirmed ? (
                   <Button 
-                    onClick={() => setIsConfirmed(true)} 
+                    onClick={async () => {
+                      try {
+                        const { error } = await supabase
+                          .from('confirmed_dates')
+                          .insert([
+                            { 
+                              user_name: userName,
+                              date_title: chosenDate.title,
+                              date_id: chosenDate.id,
+                              confirmed_at: new Date().toISOString()
+                            }
+                          ]);
+                        
+                        if (error) throw error;
+                        setIsConfirmed(true);
+                        toast.success('Date confirmed successfully!');
+                      } catch (error) {
+                        console.error('Error confirming date:', error);
+                        toast.error('Failed to confirm date. Please try again.');
+                      }
+                    }} 
                     className="w-full mb-4 bg-blue-600 hover:bg-blue-700 text-white"
                     disabled={!userName.trim()}
                   >
@@ -101,6 +122,8 @@ const Index = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           {filteredDates.map(date => <DateCard key={date.id} title={date.title} description={date.description} imageSrc={date.imageSrc} onClick={() => handleDateClick(date)} className={chosenDate?.id === date.id ? "ring-2 ring-date-purple" : ""} />)}
         </div>
+        
+        <ConfirmedDates />
       </main>
       
       <Footer />
