@@ -1,4 +1,3 @@
-
 import { DateType } from '@/types/date';
 
 export const dateOptions: DateType[] = [
@@ -115,59 +114,101 @@ export const dateOptions: DateType[] = [
     category: "indoor"
   },
   {
-    id: "cooking-date",
-    title: "Cooking Date",
-    description: "Create a delicious meal together from scratch with love.",
-    imageSrc: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1470&auto=format&fit=crop",
+    id: "skincare",
+    title: "Skincare Date",
+    description: "Pamper yourselves with a relaxing skincare routine together.",
+    imageSrc: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1470&auto=format&fit=crop",
     activities: [
-      "Choose a cuisine you've both wanted to try",
-      "Shop for ingredients together",
-      "Assign tasks and cook as a team",
-      "Set a beautiful table for your meal"
+      "Do face masks together",
+      "Give each other facial massages",
+      "Try new skincare products",
+      "Take before and after selfies"
     ],
-    mood: "Collaborative, sensory, and satisfying",
+    mood: "Relaxing, intimate, and caring",
     category: "indoor"
   },
   {
-    id: "ice-cream",
-    title: "Ice Cream Date",
-    description: "Indulge in sweet frozen treats and even sweeter conversations.",
-    imageSrc: "https://images.unsplash.com/photo-1566454825481-9c31a89ee748?q=80&w=1374&auto=format&fit=crop",
+    id: "f1-home",
+    title: "F1 at Home",
+    description: "Experience the thrill of Formula 1 from your couch.",
+    imageSrc: "https://images.unsplash.com/photo-1504707748692-419802cf939d?q=80&w=1470&auto=format&fit=crop",
     activities: [
-      "Visit multiple ice cream shops for tastings",
-      "Create your own ice cream sundaes",
-      "Take a walk while enjoying your treats",
-      "Rate and review different flavors together"
+      "Watch an F1 race together",
+      "Make race-themed snacks",
+      "Play F1 video games",
+      "Learn about different teams and drivers"
     ],
-    mood: "Sweet, carefree, and light-hearted",
+    mood: "Exciting, passionate, and entertaining",
+    category: "indoor"
+  },
+  {
+    id: "late-night-music",
+    title: "Late Night Music Drive",
+    description: "Cruise through empty streets with the perfect soundtrack.",
+    imageSrc: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?q=80&w=1471&auto=format&fit=crop",
+    activities: [
+      "Create the perfect playlist together",
+      "Find scenic routes with city lights",
+      "Stop at a quiet spot to talk",
+      "Enjoy midnight snacks"
+    ],
+    mood: "Atmospheric, romantic, and adventurous",
+    category: "outdoor"
+  },
+  {
+    id: "arcade",
+    title: "Arcade Date",
+    description: "Relive the retro gaming experience together.",
+    imageSrc: "https://images.unsplash.com/photo-1511882150382-421056c89033?q=80&w=1471&auto=format&fit=crop",
+    activities: [
+      "Play classic arcade games",
+      "Compete for high scores",
+      "Share gaming memories",
+      "Win prizes together"
+    ],
+    mood: "Playful, nostalgic, and competitive",
+    category: "indoor"
+  },
+  {
+    id: "polaroids",
+    title: "Polaroid Date",
+    description: "Capture instant memories around the city.",
+    imageSrc: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1464&auto=format&fit=crop",
+    activities: [
+      "Take polaroid photos at different locations",
+      "Create a mini photo album",
+      "Write captions for each photo",
+      "Find interesting backgrounds and poses"
+    ],
+    mood: "Creative, spontaneous, and memorable",
     category: "outdoor"
   },
   {
     id: "morning-walk",
     title: "Morning Walk Date",
-    description: "Start the day with fresh air, exercise, and quality time together.",
+    description: "Start the day with fresh air and quality time.",
     imageSrc: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=1470&auto=format&fit=crop",
     activities: [
       "Choose a scenic route or park",
       "Bring coffee or tea in travel mugs",
-      "Take photos of interesting things you see",
-      "Stop for breakfast after your walk"
+      "Take photos of interesting things",
+      "Stop for breakfast afterward"
     ],
-    mood: "Refreshing, peaceful, and connected",
+    mood: "Refreshing, peaceful, and energizing",
     category: "outdoor"
   },
   {
-    id: "late-night-drive",
-    title: "Late Night Music Drive",
-    description: "Cruise through empty streets with the perfect soundtrack and good company.",
-    imageSrc: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?q=80&w=1471&auto=format&fit=crop",
+    id: "cooking",
+    title: "Cooking Date",
+    description: "Create a delicious meal together from scratch.",
+    imageSrc: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1470&auto=format&fit=crop",
     activities: [
-      "Create the perfect driving playlist together",
-      "Find scenic routes or city lights",
-      "Stop at a lookout point or quiet spot",
-      "Bring midnight snacks and drinks"
+      "Choose a recipe together",
+      "Shop for ingredients",
+      "Cook as a team",
+      "Enjoy your creation"
     ],
-    mood: "Atmospheric, intimate, and free-spirited",
-    category: "outdoor"
+    mood: "Collaborative, fun, and satisfying",
+    category: "indoor"
   }
 ];
