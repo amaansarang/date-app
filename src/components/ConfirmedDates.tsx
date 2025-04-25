@@ -1,27 +1,22 @@
 
 import React, { useEffect, useState } from 'react';
-import { supabase } from '@/integrations/supabase/client';
-
-interface ConfirmedDate {
-  id: number;
-  user_name: string;
-  date_title: string;
-  date_id: string;
-  confirmed_at: string;
-}
+import { dateService, ConfirmedDate } from '@/services/dateService';
+import { toast } from '@/components/ui/use-toast';
 
 export default function ConfirmedDates() {
   const [confirmedDates, setConfirmedDates] = useState<ConfirmedDate[]>([]);
 
   useEffect(() => {
     const fetchConfirmedDates = async () => {
-      const { data, error } = await supabase
-        .from('confirmed_dates')
-        .select('*')
-        .order('confirmed_at', { ascending: false });
+      const { data, error } = await dateService.getConfirmedDates();
       
       if (error) {
         console.error('Error fetching confirmed dates:', error);
+        toast({
+          variant: "destructive",
+          title: "Error fetching dates",
+          description: "Please try again later"
+        });
         return;
       }
       
