@@ -10,14 +10,22 @@ const Header: React.FC = () => {
             <span className="text-xs text-gray-400">By Amaan</span>
           </h1>
         </div>
-        <a 
-          href="https://instagram.com/amaaannsarang" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-gray-400 hover:text-white transition-colors"
-        >
-          <Instagram size={24} />
-        </a>
+        <div className="flex items-center gap-4">
+          <a 
+            href="https://instagram.com/amaaannsarang" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white transition-colors"
+          >
+            <Instagram size={24} />
+          </a>
+          <a 
+            href="/admin"
+            className="text-gray-400 hover:text-white transition-colors text-sm"
+          >
+            Admin
+          </a>
+        </div>
       </div>
     </header>;
 };
