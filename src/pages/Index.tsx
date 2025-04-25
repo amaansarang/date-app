@@ -38,8 +38,7 @@ const Index = () => {
           <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4">
             Choose Your <span className="gradient-text font-extrabold">Date With Amaan</span>
           </h2>
-          <p className="text-lg text-muted-foreground">Hey Girl, I think I might like you. Each card holds a new adventure so lets get going BABYYYY. 
-Swipe on the cards to read the date type.</p>
+          <p className="text-lg text-muted-foreground">Hey Girl, I think I might like you. Each card holds a new adventure so lets get going BABYYYY.  Press and Hold on the cards to read the date type.</p>
         </div>
         
         <div className="flex justify-center mb-8">
