@@ -9,6 +9,8 @@ import Footer from '@/components/Footer';
 import ConfirmedDates from '@/components/ConfirmedDates';
 import { dateOptions } from '@/data/dateOptions';
 import { DateType } from '@/types/date';
+import { dateService } from '@/services/dateService'; // Assuming this import is correct
+
 const Index = () => {
   const [selectedDate, setSelectedDate] = useState<DateType | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -35,7 +37,7 @@ const Index = () => {
   const filteredDates = filter ? dateOptions.filter(date => date.category === filter) : dateOptions;
   return <div className="min-h-screen flex flex-col bg-gradient-custom">
       <Header />
-      
+
       <main className="flex-grow container max-w-5xl px-4 md:px-6 pt-8 pb-12">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4">
@@ -43,7 +45,7 @@ const Index = () => {
           </h2>
           <p className="text-lg text-muted-foreground">Hey Girl, I think I might like you. Each card holds a new adventure so lets get going BABYYYY.  Press and Hold on the cards to read the date type.</p>
         </div>
-        
+
         <div className="flex justify-center mb-8">
           <div className="flex gap-2 flex-wrap justify-center">
             <Button variant={filter === null ? "default" : "outline"} onClick={() => setFilter(null)} className="rounded-full font-semibold">
@@ -79,17 +81,12 @@ const Index = () => {
                   <Button 
                     onClick={async () => {
                       try {
-                        const { error } = await supabase
-                          .from('confirmed_dates')
-                          .insert([
-                            { 
-                              user_name: userName,
-                              date_title: chosenDate.title,
-                              date_id: chosenDate.id,
-                              confirmed_at: new Date().toISOString()
-                            }
-                          ]);
-                        
+                        const { error } = await dateService.confirmDate(
+                          userName,
+                          chosenDate.title,
+                          chosenDate.id
+                        );
+
                         if (error) throw error;
                         setIsConfirmed(true);
                         toast.success('Date confirmed successfully!');
@@ -118,16 +115,16 @@ const Index = () => {
               </div>
             </div>
           </div>}
-        
+
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           {filteredDates.map(date => <DateCard key={date.id} title={date.title} description={date.description} imageSrc={date.imageSrc} onClick={() => handleDateClick(date)} className={chosenDate?.id === date.id ? "ring-2 ring-date-purple" : ""} />)}
         </div>
-        
+
         <ConfirmedDates />
       </main>
-      
+
       <Footer />
-      
+
       {selectedDate && <DateModal date={selectedDate} isOpen={isModalOpen} onClose={handleCloseModal} onChooseDate={handleChooseDate} />}
     </div>;
 };
