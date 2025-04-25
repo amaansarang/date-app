@@ -185,33 +185,63 @@
   .date-card {
     @apply relative overflow-hidden rounded-lg border bg-slate-700/80 text-white shadow-lg transition-all hover:shadow-xl;
   }
-  
+
   .date-card::before {
     content: '';
     @apply absolute inset-0 bg-black opacity-0 transition-opacity;
   }
-  
+
   .date-card:hover::before {
     @apply opacity-30;
   }
-  
+
   .date-card-overlay {
     @apply absolute inset-0 bg-gradient-to-t from-slate-900/95 to-transparent flex flex-col justify-end p-5 text-white;
   }
-  
+
   .date-card-shine {
     @apply absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-transparent opacity-0 transition-opacity;
   }
-  
+
   .date-card:hover .date-card-shine {
     @apply opacity-100;
   }
-  
+
   .gradient-text {
     @apply bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent;
   }
 
   .bg-gradient-custom {
-    @apply bg-gradient-to-tr from-slate-900 via-slate-800 to-slate-700;
+    @apply bg-slate-900 relative overflow-hidden;
+  }
+
+  .bg-gradient-custom::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: 
+      linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: spaceFlow 20s linear infinite;
+    transform-origin: center;
+    z-index: 0;
+  }
+
+  @keyframes spaceFlow {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+
+  .bg-gradient-custom > * {
+    position: relative;
+    z-index: 1;
   }
 }
