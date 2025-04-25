@@ -17,7 +17,7 @@ export const dateOptions: DateType[] = [
   },
   {
     id: "carnight",
-    title: "Carnival Night",
+    title: "Night Drive",
     description: "Visit a carnival and enjoy games, rides, and sweet treats.",
     imageSrc: "https://imgur.com/7IuaEro.jpg",
     activities: [
@@ -72,18 +72,18 @@ export const dateOptions: DateType[] = [
     category: "indoor"
   },
   {
-    id: "donuts-date",
-    title: "Donuts Date",
-    description: "Have a sweet date enjoying delicious donuts from your favorite shop.",
-    imageSrc: "https://imgur.com/gJE8SVZ.jpg",
+    id: "stargazing-date",
+    title: "Stargazing Date",
+    description: "Head to a quiet spot under the night sky and enjoy the stars together.",
+    imageSrc: "https://imgur.com/Mcb5Wj7.jpg", // Replace with a suitable image link
     activities: [
-      "Choose your favorite donut flavors",
-      "Try a donut-making class together",
-      "Create a donut-tasting challenge",
-      "Share your donut creations with each other"
+      "Find a secluded spot with minimal light pollution",
+      "Bring a telescope or binoculars for better viewing",
+      "Look up constellations and learn about the stars",
+      "Share thoughts while enjoying the night sky"
     ],
-    mood: "Sweet, fun, and indulgent",
-    category: "indoor"
+    mood: "Romantic, peaceful, and awe-inspiring",
+    category: "outdoor"
   },
   {
     id: "drinks-at-my-place",
@@ -154,6 +154,119 @@ export const dateOptions: DateType[] = [
     ],
     mood: "Sweet, fun, and refreshing",
     category: "outdoor"
+  },
+  {
+    id: "polaroid-date",
+    title: "Polaroid Date",
+    description: "Capture raw, aesthetic moments using vintage polaroids.",
+    imageSrc: "https://imgur.com/dg5WbWG.jpg",
+    activities: ["Take candid polaroid pictures", "Make a mini scrapbook", "Swap your favorite photo", "Frame your memories"],
+    mood: "Creative, nostalgic, aesthetic",
+    category: "creative"
+  },
+  {
+    id: "coffee-date",
+    title: "Coffee Date",
+    description: "Cozy up at a café or brew together at home.",
+    imageSrc: "https://imgur.com/K5u8jIZ.jpg",
+    activities: ["Try a new café", "Talk over coffee and pastries", "People-watch together", "Create your custom drink"],
+    mood: "Cozy, conversational, relaxed",
+    category: "indoor"
+  },
+  {
+    id: "boka-date",
+    title: "Boka Date",
+    description: "Play emotional Boka music and vibe in silence or soft talks.",
+    imageSrc: "https://imgur.com/iiELVSI.jpg",
+    activities: ["Curate a Boka playlist", "Dim the lights", "Listen and feel deeply", "Talk only if you want to"],
+    mood: "Emotional, intimate, quiet",
+    category: "music"
+  },
+  {
+    id: "cigarettes-after-sex",
+    title: "Cigarettes After Sex",
+    description: "Soft vibes, dark lighting, and slow music — the dream mood.",
+    imageSrc: "https://imgur.com/APxUOXP.jpg",
+    activities: ["Create a moody playlist", "Light candles or ambient lighting", "Cuddle up and relax", "Have slow conversations"],
+    mood: "Seductive, slow, intimate",
+    category: "music"
+  },
+  {
+    id: "hand-painting",
+    title: "Hand Painting",
+    description: "Messy, fun, and artistic — express yourself with color.",
+    imageSrc: "https://imgur.com/meFh2Gs.jpg",
+    activities: ["Paint each other’s hands", "Make art on canvas or paper", "Create a shared piece", "Get messy and laugh"],
+    mood: "Creative, playful, expressive",
+    category: "creative"
+  },
+  {
+    id: "day-bike-ride",
+    title: "Day Bike Ride",
+    description: "Ride through scenic routes, stop for chai, and feel the wind in your face.",
+    imageSrc: "https://imgur.com/ejbNd07.jpg",
+    activities: [
+      "Pick a scenic or shady route",
+      "Wear matching sunglasses or helmets",
+      "Stop for local snacks or chai",
+      "Click cute photos along the way"
+    ],
+    mood: "Refreshing, active, wholesome",
+    category: "outdoor"
+  },
+  {
+    id: "night-bike-ride",
+    title: "Night Bike Ride",
+    description: "Cruise together under moonlight through calm, empty roads.",
+    imageSrc: "https://imgur.com/wVS50A9.jpg",
+    activities: ["Pick a quiet route", "Wear matching jackets or helmets", "Stop for chai or ice cream", "Capture the vibe on camera"],
+    mood: "Adventurous, chill, cinematic",
+    category: "outdoor"
+  },
+  {
+    id: "pool-date",
+    title: "Pool Date",
+    description: "Swim, splash, and soak in the sun or moonlight together.",
+    imageSrc: "https://imgur.com/tpMTwfk.jpg",
+    activities: ["Play water games", "Float together on inflatables", "Share snacks by the pool", "Have underwater challenges"],
+    mood: "Refreshing, flirty, playful",
+    category: "outdoor"
+  },
+  {
+    id: "netflix-and-chill",
+    title: "Netflix and Chill",
+    description: "Pick something good, stay close, and see where it goes.",
+    imageSrc: "https://imgur.com/cYzuQQX.jpg",
+    activities: ["Choose your comfort shows", "Set up cozy pillows and blankets", "Order food or cook together", "Cuddle and vibe"],
+    mood: "Laid-back, flirty, private",
+    category: "indoor"
+  },
+  {
+    id: "midnight-memories",
+    title: "Midnight Memories",
+    description: "Roam the streets, laugh, talk, and make core memories past midnight.",
+    imageSrc: "https://imgur.com/UiqSxm1.jpg",
+    activities: ["Go for a long drive", "Eat midnight snacks", "Dance at a random spot", "Watch the city lights in silence"],
+    mood: "Spontaneous, romantic, youthful",
+    category: "outdoor"
+  },
+  {
+    id: "my-kind-of-playlist",
+    title: "My Kind of Playlist",
+    description: "Share your personal music — the kind that says everything.",
+    imageSrc: "https://imgur.com/laPRi4M.jpg",
+    activities: ["Curate your favorite songs", "Play and explain why they matter", "Make a shared playlist", "Slow dance or sing along"],
+    mood: "Emotional, personal, bonding",
+    category: "music"
+  },
+  {
+    id: "f1-lego-date",
+    title: "F1 LEGO Date",
+    description: "Build a Formula 1 car from LEGO and vibe like speed freaks.",
+    imageSrc: "https://imgur.com/3OvBapS.jpg",
+    activities: ["Assemble a LEGO F1 model", "Watch an F1 highlight reel", "Race your cars on the table", "Celebrate your build"],
+    mood: "Nerdy, focused, fun",
+    category: "creative"
   },
   {
     id: "jetlag-date",
@@ -279,6 +392,20 @@ export const dateOptions: DateType[] = [
       "Dress up in Swift-inspired outfits"
     ],
     mood: "Musical, expressive, and fan-centric",
+    category: "indoor"
+  },
+  {
+    id: "donuts-date",
+    title: "Donuts Date",
+    description: "Have a sweet date enjoying delicious donuts from your favorite shop.",
+    imageSrc: "https://imgur.com/gJE8SVZ.jpg",
+    activities: [
+      "Choose your favorite donut flavors",
+      "Try a donut-making class together",
+      "Create a donut-tasting challenge",
+      "Share your donut creations with each other"
+    ],
+    mood: "Sweet, fun, and indulgent",
     category: "indoor"
   },
   {
