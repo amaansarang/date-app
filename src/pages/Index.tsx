@@ -14,6 +14,7 @@ const Index = () => {
   const [chosenDate, setChosenDate] = useState<DateType | null>(null);
   const [filter, setFilter] = useState<string | null>(null);
   const [userName, setUserName] = useState<string>("");
+  const [isConfirmed, setIsConfirmed] = useState(false);
   const handleDateClick = (date: DateType) => {
     setSelectedDate(date);
     setIsModalOpen(true);
@@ -73,9 +74,23 @@ const Index = () => {
                   placeholder="Enter your name"
                   className="w-full mb-4 p-2 rounded-md bg-slate-700 text-white border border-slate-600 focus:outline-none focus:border-blue-500"
                 />
+                {!isConfirmed ? (
+                  <Button 
+                    onClick={() => setIsConfirmed(true)} 
+                    className="w-full mb-4 bg-blue-600 hover:bg-blue-700 text-white"
+                    disabled={!userName.trim()}
+                  >
+                    Confirm Date
+                  </Button>
+                ) : (
+                  <div className="mb-4 text-green-400 text-center font-medium">
+                    Date is confirmed! ❤️
+                  </div>
+                )}
                 <Button variant="outline" onClick={() => {
                   setChosenDate(null);
                   setUserName("");
+                  setIsConfirmed(false);
                 }} className="text-sm text-slate-300 hover:text-white">
                   Choose Another Date
                 </Button>
