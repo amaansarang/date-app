@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Instagram } from 'lucide-react';
+import { Heart, Instagram, Triangle } from 'lucide-react';
 const Header: React.FC = () => {
   return <header className="w-full py-4 bg-slate-900">
       <div className="container max-w-5xl flex items-center justify-between">
@@ -21,9 +21,9 @@ const Header: React.FC = () => {
           </a>
           <a 
             href="/admin"
-            className="text-gray-400 hover:text-white transition-colors text-sm"
+            className="text-gray-400 hover:text-white transition-colors cursor-pointer"
           >
-            Admin
+            <Triangle className="h-6 w-6 rotate-180 hover:text-blue-500" />
           </a>
         </div>
       </div>
