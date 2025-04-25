@@ -18,13 +18,13 @@ export const dateOptions: DateType[] = [
   {
     id: "carnight",
     title: "Night Drive",
-    description: "Visit a carnival and enjoy games, rides, and sweet treats.",
+    description: "Cruise under city lights with good music and even better company.",
     imageSrc: "https://imgur.com/7IuaEro.jpg",
     activities: [
-      "Play carnival games to win prizes",
-      "Ride the Ferris wheel or roller coasters",
-      "Try cotton candy and other fun foods",
-      "Take photos by the carnival lights"
+      "Pick a playlist you both vibe with",
+        "Drive through scenic or quiet roads",
+        "Stop for street food or a chai break",
+        "Park somewhere peaceful and talk"
     ],
     mood: "Exciting, adventurous, and playful",
     category: "outdoor"
@@ -69,7 +69,7 @@ export const dateOptions: DateType[] = [
       "Share dessert and a quiet conversation"
     ],
     mood: "Romantic, intimate, and sophisticated",
-    category: "indoor"
+    category: "outdoor"
   },
   {
     id: "stargazing-date",
