@@ -88,8 +88,14 @@ export const NameInputDialog = ({
   secretMessage: string;
   setSecretMessage: (msg: string) => void;
 }) => {
+  const handleClose = () => {
+    setUserName("");
+    setSecretMessage("");
+    onClose();
+  };
+
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent className="sm:max-w-[500px] bg-slate-800 text-white">
         <DialogHeader>
           <DialogTitle>Enter Your Name</DialogTitle>
