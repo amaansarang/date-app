@@ -22,13 +22,10 @@ const AdminAuth = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-cyan-500/10 rounded-lg animate-[pulse_1.5s_ease-in-out_infinite]"></div>
         <div className="relative z-10">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 animate-[pulse_1.5s_ease-in-out_infinite]">
-              WELCOME BACK, SIR
-            </h1>
-            <div className="mt-4">
-              <div className="w-16 h-16 mx-auto">
-                <div className="w-full h-full border-4 border-cyan-500 rounded-full border-t-transparent animate-[spin_0.8s_linear_infinite]"></div>
-              </div>
+            <div className="flex justify-center items-center gap-2">
+              <div className="w-4 h-16 bg-blue-500 rounded-full animate-[bounce_0.8s_ease-in-out_infinite]" style={{ animationDelay: '0s' }}></div>
+              <div className="w-4 h-16 bg-cyan-400 rounded-full animate-[bounce_0.8s_ease-in-out_infinite]" style={{ animationDelay: '0.2s' }}></div>
+              <div className="w-4 h-16 bg-blue-400 rounded-full animate-[bounce_0.8s_ease-in-out_infinite]" style={{ animationDelay: '0.4s' }}></div>
             </div>
           </div>
           <form onSubmit={handleSubmit} className="space-y-4 relative">

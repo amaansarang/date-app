@@ -175,6 +175,15 @@
     }
   }
 
+  @keyframes bounce {
+    0%, 100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(0.5);
+    }
+  }
+
   .bg-gradient-custom > * {
     position: relative;
     z-index: 1;
