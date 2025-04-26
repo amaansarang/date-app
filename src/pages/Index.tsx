@@ -116,7 +116,14 @@ const Index = () => {
       <Footer />
 
       {selectedDate && <DateModal date={selectedDate} isOpen={isModalOpen} onClose={handleCloseModal} onChooseDate={handleChooseDate} />}
-      <Dialog open={isConfirmed} onOpenChange={(open) => !open && setChosenDate(null)}>
+      <Dialog open={isConfirmed} onOpenChange={(open) => {
+        if (!open) {
+          setIsConfirmed(false);
+          setChosenDate(null);
+          setUserName("");
+          setSecretMessage("");
+        }
+      }}>
         <DialogContent className="sm:max-w-[500px] bg-slate-800 text-white">
           <DialogHeader>
             <DialogTitle>Date Confirmed! ❤️</DialogTitle>
