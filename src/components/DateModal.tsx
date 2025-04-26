@@ -95,7 +95,7 @@ export const NameInputDialog = ({
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={handleClose}>
+    <Dialog open={isOpen} onOpenChange={(open) => !open && handleClose()}>
       <DialogContent className="sm:max-w-[500px] bg-slate-800 text-white">
         <DialogHeader>
           <DialogTitle>Enter Your Name</DialogTitle>
