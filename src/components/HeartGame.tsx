@@ -1,148 +1,93 @@
-
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+
+type Square = '❤️' | '⭐' | null;
 
 export const HeartGame = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [gameOver, setGameOver] = useState(false);
-  const [score, setScore] = useState(0);
+  const [squares, setSquares] = useState<Square[]>(Array(9).fill(null));
+  const [isHeartNext, setIsHeartNext] = useState(true);
+  const [winner, setWinner] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (!isOpen || !canvasRef.current) return;
+  const checkWinner = (squares: Square[]) => {
+    const lines = [
+      [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
+      [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
+      [0, 4, 8], [2, 4, 6] // diagonals
+    ];
 
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d')!;
-    let animationId: number;
-    let jumping = false;
-    let dinoY = 150;
-    let velocity = 0;
-    let obstacleX = canvas.width;
-    const gravity = 0.6;
-    const jumpForce = -12;
-
-    const drawDino = () => {
-      ctx.fillStyle = 'green';
-      ctx.fillRect(50, dinoY, 30, 30);
-    };
-
-    const drawObstacle = () => {
-      ctx.fillStyle = 'red';
-      ctx.fillRect(obstacleX, 160, 20, 20);
-    };
-
-    const checkCollision = () => {
-      const dinoBox = { x: 50, y: dinoY, width: 30, height: 30 };
-      const obstacleBox = { x: obstacleX, y: 160, width: 20, height: 20 };
-
-      return (
-        dinoBox.x < obstacleBox.x + obstacleBox.width &&
-        dinoBox.x + dinoBox.width > obstacleBox.x &&
-        dinoBox.y < obstacleBox.y + obstacleBox.height &&
-        dinoBox.y + dinoBox.height > obstacleBox.y
-      );
-    };
-
-    const gameLoop = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      // Ground
-      ctx.fillStyle = '#666';
-      ctx.fillRect(0, 180, canvas.width, 2);
-
-      // Score
-      ctx.fillStyle = 'white';
-      ctx.font = '20px Arial';
-      ctx.fillText(`Score: ${score}`, 10, 30);
-
-      if (jumping) {
-        velocity += gravity;
-        dinoY += velocity;
-
-        if (dinoY > 150) {
-          dinoY = 150;
-          jumping = false;
-          velocity = 0;
-        }
+    for (const [a, b, c] of lines) {
+      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+        return squares[a];
       }
+    }
+    return null;
+  };
 
-      obstacleX -= 5;
-      if (obstacleX < -20) {
-        obstacleX = canvas.width;
-        setScore(s => s + 1);
-      }
+  const handleClick = (i: number) => {
+    if (squares[i] || winner) return;
 
-      drawDino();
-      drawObstacle();
+    const newSquares = squares.slice();
+    newSquares[i] = isHeartNext ? '❤️' : '⭐';
+    setSquares(newSquares);
+    setIsHeartNext(!isHeartNext);
 
-      if (checkCollision()) {
-        setGameOver(true);
-        return;
-      }
-
-      animationId = requestAnimationFrame(gameLoop);
-    };
-
-    const handleJump = () => {
-      if (!jumping) {
-        jumping = true;
-        velocity = jumpForce;
-      }
-    };
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.code === 'Space' || e.code === 'ArrowUp') {
-        handleJump();
-      }
-    };
-
-    const handleTouch = (e: TouchEvent) => {
-      e.preventDefault();
-      handleJump();
-    };
-
-    document.addEventListener('keydown', handleKeyDown);
-    document.addEventListener('touchstart', handleTouch);
-    gameLoop();
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-      document.removeEventListener('touchstart', handleTouch);
-      cancelAnimationFrame(animationId);
-    };
-  }, [isOpen, gameOver]);
+    const gameWinner = checkWinner(newSquares);
+    if (gameWinner) {
+      setWinner(gameWinner);
+    } else if (newSquares.every(square => square !== null)) {
+      setWinner('draw');
+    }
+  };
 
   const handleRestart = () => {
-    setGameOver(false);
-    setScore(0);
+    setSquares(Array(9).fill(null));
+    setIsHeartNext(true);
+    setWinner(null);
   };
+
+  const renderSquare = (i: number) => (
+    <button
+      className={`w-20 h-20 border-2 border-pink-400 text-3xl flex items-center justify-center 
+        ${!squares[i] && !winner ? 'hover:bg-pink-100/10' : ''}`}
+      onClick={() => handleClick(i)}
+    >
+      {squares[i]}
+    </button>
+  );
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[425px] bg-slate-800 text-white">
         <DialogHeader>
-          <DialogTitle className="text-center">Dino Runner Game 🦖</DialogTitle>
+          <DialogTitle className="text-center">Love & Stars Game 💝</DialogTitle>
         </DialogHeader>
-        <div className="p-4">
-          <canvas
-            ref={canvasRef}
-            width={400}
-            height={200}
-            className="bg-slate-900 rounded-lg"
-          />
-          {gameOver && (
+        <div className="p-4 flex flex-col items-center gap-4">
+          {!winner && (
+            <p className="text-lg mb-2">
+              Next player: {isHeartNext ? '❤️' : '⭐'}
+            </p>
+          )}
+          <div className="grid grid-cols-3 gap-1 bg-pink-400/20 p-2 rounded-lg">
+            {Array(9).fill(null).map((_, i) => (
+              <div key={i}>{renderSquare(i)}</div>
+            ))}
+          </div>
+          {winner && (
             <div className="text-center mt-4">
-              <p className="text-xl mb-2">Game Over! Score: {score}</p>
-              <button
+              <p className="text-xl mb-4">
+                {winner === 'draw' 
+                  ? "It's a draw! 💝" 
+                  : `Winner: ${winner} 🎉`}
+              </p>
+              <Button 
                 onClick={handleRestart}
-                className="px-4 py-2 bg-blue-600 rounded hover:bg-blue-700"
+                className="bg-pink-600 hover:bg-pink-700"
               >
                 Play Again
-              </button>
+              </Button>
             </div>
           )}
-          <p className="text-center mt-4 text-sm text-slate-300">
-            Press Space/Up Arrow or tap screen to jump
-          </p>
         </div>
       </DialogContent>
     </Dialog>
