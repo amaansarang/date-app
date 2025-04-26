@@ -96,11 +96,7 @@ const Index = () => {
                   >
                     Confirm Date
                   </Button>
-                ) : (
-                  <div className="mb-4 text-green-400 text-center font-medium">
-                    Date is confirmed! ❤️
-                  </div>
-                )}
+                ) : null}
                 <Button variant="outline" onClick={() => {
                   setChosenDate(null);
                   setUserName("");
@@ -120,6 +116,26 @@ const Index = () => {
       <Footer />
 
       {selectedDate && <DateModal date={selectedDate} isOpen={isModalOpen} onClose={handleCloseModal} onChooseDate={handleChooseDate} />}
+      <Dialog open={isConfirmed} onOpenChange={(open) => !open && setChosenDate(null)}>
+        <DialogContent className="sm:max-w-[500px] bg-slate-800 text-white">
+          <DialogHeader>
+            <DialogTitle>Date Confirmed! ❤️</DialogTitle>
+            <DialogDescription className="text-slate-300">
+              Your date has been successfully confirmed. Can't wait to see you there!
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button onClick={() => {
+              setChosenDate(null);
+              setUserName("");
+              setIsConfirmed(false);
+            }}>
+              Choose Another Date
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
       <NameInputDialog 
         isOpen={!!chosenDate && !isConfirmed} 
         onClose={() => setChosenDate(null)}
