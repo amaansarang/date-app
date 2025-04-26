@@ -19,12 +19,6 @@ const Header: React.FC = () => {
           >
             <Instagram size={24} />
           </a>
-          <a 
-            href="/admin"
-            className="text-gray-400 hover:text-white transition-colors cursor-pointer"
-          >
-            <Triangle className="h-6 w-6 rotate-180 hover:text-blue-500" />
-          </a>
         </div>
       </div>
     </header>;
