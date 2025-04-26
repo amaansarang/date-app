@@ -6,8 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Admin from "./pages/Admin";
-import AdminAuth from "@/pages/AdminAuth";
-import Admin from "@/pages/Admin";
+import AdminAuth from "./pages/AdminAuth"; // Added import for AdminAuth page
+
 
 const queryClient = new QueryClient();
 
