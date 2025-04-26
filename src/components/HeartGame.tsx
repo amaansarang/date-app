@@ -123,7 +123,7 @@ export const HeartGame = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[425px] bg-slate-800 text-white">
         <DialogHeader>
-          <DialogTitle className="text-center">Kitty Tic Tac Toe 😺</DialogTitle>
+          <DialogTitle className="text-center">Secret Kitty Tic Tac Toe 😺</DialogTitle>
         </DialogHeader>
         <div className="p-4 flex flex-col items-center gap-4">
           {!winner && (
