@@ -79,6 +79,12 @@ export default function Admin() {
                               {dateDetails.mood}
                             </p>
                           )}
+                          {date.secret_message && (
+                            <div className="mt-4 p-3 bg-slate-800 rounded-lg">
+                              <p className="text-slate-200 font-medium mb-1">Secret Message:</p>
+                              <p className="text-slate-300 italic">{date.secret_message}</p>
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>
