@@ -71,4 +71,59 @@ const DateModal: React.FC<DateModalProps> = ({ date, isOpen, onClose, onChooseDa
   );
 };
 
+export const NameInputDialog = ({ 
+  isOpen, 
+  onClose, 
+  onSubmit,
+  userName,
+  setUserName,
+  secretMessage,
+  setSecretMessage 
+}: { 
+  isOpen: boolean;
+  onClose: () => void;
+  onSubmit: () => void;
+  userName: string;
+  setUserName: (name: string) => void;
+  secretMessage: string;
+  setSecretMessage: (msg: string) => void;
+}) => {
+  return (
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="sm:max-w-[500px] bg-slate-800 text-white">
+        <DialogHeader>
+          <DialogTitle>Enter Your Name</DialogTitle>
+          <DialogDescription className="text-slate-300">
+            Please enter your name to confirm the date.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="grid gap-4 py-4">
+          <input
+            autoFocus
+            type="text"
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+            placeholder="Enter your name"
+            className="w-full p-2 rounded-md bg-slate-700 text-white border border-slate-600 focus:outline-none focus:border-blue-500"
+          />
+          <textarea
+            placeholder="Secret message (optional)"
+            className="w-full p-2 rounded-md bg-slate-700 text-white border border-slate-600 focus:outline-none focus:border-blue-500 resize-none h-20"
+            onChange={(e) => setSecretMessage(e.target.value)}
+            value={secretMessage}
+          />
+        </div>
+        <DialogFooter>
+          <Button onClick={onClose} variant="outline" className="text-slate-300">
+            Cancel
+          </Button>
+          <Button onClick={onSubmit} disabled={!userName.trim()}>
+            Confirm Date
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  );
+};
+
 export default DateModal;

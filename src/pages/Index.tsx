@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { toast } from '@/components/ui/sonner';
 import { Heart } from 'lucide-react';
 import DateCard from '@/components/DateCard';
-import DateModal from '@/components/DateModal';
+import DateModal, { NameInputDialog } from '@/components/DateModal';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ConfirmedDates from '@/components/ConfirmedDates';
@@ -72,39 +72,6 @@ const Index = () => {
               <div className="flex-1">
                 <h4 className="font-playfair text-xl font-bold mb-2 text-white">{chosenDate.title}</h4>
                 <p className="text-slate-300 mb-4">{chosenDate.description}</p>
-                <Dialog open={!!chosenDate && !userName} onOpenChange={() => setChosenDate(null)}>
-                  <DialogContent className="bg-slate-800 text-white">
-                    <DialogHeader>
-                      <DialogTitle>Enter Your Name</DialogTitle>
-                      <DialogDescription className="text-slate-300">
-                        Please enter your name to confirm the date.
-                      </DialogDescription>
-                    </DialogHeader>
-                    <input
-                      type="text"
-                      value={userName}
-                      onChange={(e) => setUserName(e.target.value)}
-                      placeholder="Enter your name"
-                      className="w-full mb-2 p-2 rounded-md bg-slate-700 text-white border border-slate-600 focus:outline-none focus:border-blue-500"
-                    />
-                    <textarea
-                      placeholder="Secret message (optional)"
-                      className="w-full mb-4 p-2 rounded-md bg-slate-700 text-white border border-slate-600 focus:outline-none focus:border-blue-500 resize-none h-20"
-                      onChange={(e) => setSecretMessage(e.target.value)}
-                      value={secretMessage}
-                    />
-                    <DialogFooter>
-                      <Button onClick={() => setChosenDate(null)} variant="outline" className="text-slate-300">Cancel</Button>
-                      <Button onClick={() => {
-                        if (userName.trim()) {
-                          setIsModalOpen(false);
-                        }
-                      }} disabled={!userName.trim()}>
-                        Continue
-                      </Button>
-                    </DialogFooter>
-                  </DialogContent>
-                </Dialog>
                 {!isConfirmed ? (
                   <Button 
                     onClick={async () => {
@@ -153,6 +120,30 @@ const Index = () => {
       <Footer />
 
       {selectedDate && <DateModal date={selectedDate} isOpen={isModalOpen} onClose={handleCloseModal} onChooseDate={handleChooseDate} />}
+      <NameInputDialog 
+        isOpen={!!chosenDate && !isConfirmed} 
+        onClose={() => setChosenDate(null)}
+        onSubmit={async () => {
+          try {
+            const { error } = await dateService.confirmDate(
+              userName,
+              chosenDate!.title,
+              chosenDate!.id,
+              secretMessage
+            );
+            if (error) throw error;
+            setIsConfirmed(true);
+            toast.success('Date confirmed successfully!');
+          } catch (error) {
+            console.error('Error confirming date:', error);
+            toast.error('Failed to confirm date. Please try again.');
+          }
+        }}
+        userName={userName}
+        setUserName={setUserName}
+        secretMessage={secretMessage}
+        setSecretMessage={setSecretMessage}
+      />
     </div>;
 };
 export default Index;
