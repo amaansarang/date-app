@@ -55,7 +55,7 @@ const DateModal: React.FC<DateModalProps> = ({ date, isOpen, onClose, onChooseDa
           )}
         </div>
         
-        <DialogFooter className="p-6 pt-0">
+        <DialogFooter className="p-6 pt-0 gap-4">
           <Button variant="outline" onClick={onClose} className="text-slate-300 border-slate-600 hover:bg-slate-700">
             Maybe Later
           </Button>
