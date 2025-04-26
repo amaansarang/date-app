@@ -119,7 +119,7 @@ export const NameInputDialog = ({
             value={secretMessage}
           />
         </div>
-        <DialogFooter>
+        <DialogFooter className="space-x-2">
           <Button onClick={onClose} variant="outline" className="text-slate-300">
             Cancel
           </Button>
