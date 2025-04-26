@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { toast } from '@/components/ui/sonner';
 import { Heart } from 'lucide-react';
 import DateCard from '@/components/DateCard';
@@ -71,19 +72,39 @@ const Index = () => {
               <div className="flex-1">
                 <h4 className="font-playfair text-xl font-bold mb-2 text-white">{chosenDate.title}</h4>
                 <p className="text-slate-300 mb-4">{chosenDate.description}</p>
-                <input
-                  type="text"
-                  value={userName}
-                  onChange={(e) => setUserName(e.target.value)}
-                  placeholder="Enter your name"
-                  className="w-full mb-2 p-2 rounded-md bg-slate-700 text-white border border-slate-600 focus:outline-none focus:border-blue-500"
-                />
-                <textarea
-                  placeholder="Secret message (optional)"
-                  className="w-full mb-4 p-2 rounded-md bg-slate-700 text-white border border-slate-600 focus:outline-none focus:border-blue-500 resize-none h-20"
-                  onChange={(e) => setSecretMessage(e.target.value)}
-                  value={secretMessage}
-                />
+                <Dialog open={!!chosenDate && !userName} onOpenChange={() => setChosenDate(null)}>
+                  <DialogContent className="bg-slate-800 text-white">
+                    <DialogHeader>
+                      <DialogTitle>Enter Your Name</DialogTitle>
+                      <DialogDescription className="text-slate-300">
+                        Please enter your name to confirm the date.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <input
+                      type="text"
+                      value={userName}
+                      onChange={(e) => setUserName(e.target.value)}
+                      placeholder="Enter your name"
+                      className="w-full mb-2 p-2 rounded-md bg-slate-700 text-white border border-slate-600 focus:outline-none focus:border-blue-500"
+                    />
+                    <textarea
+                      placeholder="Secret message (optional)"
+                      className="w-full mb-4 p-2 rounded-md bg-slate-700 text-white border border-slate-600 focus:outline-none focus:border-blue-500 resize-none h-20"
+                      onChange={(e) => setSecretMessage(e.target.value)}
+                      value={secretMessage}
+                    />
+                    <DialogFooter>
+                      <Button onClick={() => setChosenDate(null)} variant="outline" className="text-slate-300">Cancel</Button>
+                      <Button onClick={() => {
+                        if (userName.trim()) {
+                          setIsModalOpen(false);
+                        }
+                      }} disabled={!userName.trim()}>
+                        Continue
+                      </Button>
+                    </DialogFooter>
+                  </DialogContent>
+                </Dialog>
                 {!isConfirmed ? (
                   <Button 
                     onClick={async () => {
