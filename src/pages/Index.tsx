@@ -124,6 +124,26 @@ const Index = () => {
               Your date has been successfully confirmed. Can't wait to see you there!
             </DialogDescription>
           </DialogHeader>
+          {chosenDate && (
+            <div className="p-4">
+              <div className="rounded-lg overflow-hidden mb-4">
+                <img src={chosenDate.imageSrc} alt={chosenDate.title} className="w-full h-48 object-cover"/>
+              </div>
+              <h3 className="text-lg font-semibold mb-2">{chosenDate.title}</h3>
+              <p className="text-slate-300 mb-3">{chosenDate.description}</p>
+              <div className="space-y-2">
+                <h4 className="font-medium text-sm text-slate-200">What you'll do:</h4>
+                <ul className="space-y-1">
+                  {chosenDate.activities.map((activity, index) => (
+                    <li key={index} className="text-sm text-slate-300 flex gap-2">
+                      <span className="text-blue-400">•</span>
+                      {activity}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          )}
           <DialogFooter>
             <Button onClick={() => {
               setChosenDate(null);
