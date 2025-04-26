@@ -82,18 +82,31 @@ export const HeartGame = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
       animationId = requestAnimationFrame(gameLoop);
     };
 
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.code === 'Space' || e.code === 'ArrowUp') && !jumping) {
+    const handleJump = () => {
+      if (!jumping) {
         jumping = true;
         velocity = jumpForce;
       }
     };
 
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.code === 'Space' || e.code === 'ArrowUp') {
+        handleJump();
+      }
+    };
+
+    const handleTouch = (e: TouchEvent) => {
+      e.preventDefault();
+      handleJump();
+    };
+
     document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('touchstart', handleTouch);
     gameLoop();
 
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('touchstart', handleTouch);
       cancelAnimationFrame(animationId);
     };
   }, [isOpen, gameOver]);
@@ -128,7 +141,7 @@ export const HeartGame = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             </div>
           )}
           <p className="text-center mt-4 text-sm text-slate-300">
-            Press Space or Up Arrow to jump
+            Press Space/Up Arrow or tap screen to jump
           </p>
         </div>
       </DialogContent>
